@@ -1,16 +1,21 @@
 ﻿using Crafting.WPF.Screens.RawDataScreens.ReagentScreen;
+using Crafting.WPF.Screens.RawDataScreens.VialScreen;
 using Crafting.WPF.Utilties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Crafting.WPF.Screens.RawDataScreens
 {
     public class RawDataViewModel : ViewModelBase
     {
+        private void Navigate(Page page)
+        {
+            ApplicationViewModel.TopLevelViewModel.CurrentPage = page;
+        }
+
+        /// <summary>
+        /// Reagent navigation
+        /// </summary>
         private ICommand _reagentNavigationCommand;
 
         public ICommand ReagentNavigationCommand
@@ -20,16 +25,27 @@ namespace Crafting.WPF.Screens.RawDataScreens
                 if (_reagentNavigationCommand == null)
                 {
                     _reagentNavigationCommand = new RelayCommand(
-                        p => this.ExecuteReagentNavigationCommand());
+                        p => this.Navigate(new ReagentPage()));
                 }
 
                 return _reagentNavigationCommand;
             }
         }
 
-        private void ExecuteReagentNavigationCommand()
+        private ICommand _vialNavigationCommand;
+
+        public ICommand VialNavigationCommand
         {
-            ApplicationViewModel.TopLevelViewModel.CurrentPage = new ReagentPage();
+            get
+            {
+                if (_vialNavigationCommand == null)
+                {
+                    _vialNavigationCommand = new RelayCommand(
+                        p => this.Navigate(new VialPage()));
+                }
+
+                return _vialNavigationCommand;
+            }
         }
     }
 }

@@ -24,7 +24,8 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Button Content="Vials" />
+            <Button Content="Vials" 
+                    Command="{Binding VialNavigationCommand}"/>
             <Button Content="Reagents" Grid.Column="2"
                     Command="{Binding ReagentNavigationCommand}"/>
 
