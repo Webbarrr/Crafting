@@ -71,6 +71,10 @@
       <DependentUpon>VialPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\RawDataScreens\VialScreen\VialViewModel.cs" />
+    <Compile Include="Screens\WalletScreen\WalletPage.xaml.cs">
+      <DependentUpon>WalletPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\WalletScreen\WalletViewModel.cs" />
     <Compile Include="Utilties\RelayCommand.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
@@ -99,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\RawDataScreens\VialScreen\VialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\WalletScreen\WalletPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
