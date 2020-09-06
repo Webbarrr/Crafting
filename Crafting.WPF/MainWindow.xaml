@@ -1,0 +1,32 @@
+﻿<Window x:Class="Crafting.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crafting.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <local:ApplicationViewModel x:Key="ViewModel" />
+        </Grid.Resources>
+
+        <Grid.DataContext>
+            <Binding Source="{StaticResource ViewModel}" />
+        </Grid.DataContext>
+
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top"
+                        Orientation="Horizontal">
+                <Button Content="Raw Data" Command="{Binding RawDataNavigationCommand}"/>
+            </StackPanel>
+            
+            <StackPanel DockPanel.Dock="Bottom">
+                <Frame HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                       NavigationUIVisibility="Hidden"
+                       Content="{Binding Path=CurrentPage}" />
+            </StackPanel>
+        </DockPanel>
+        
+    </Grid>
+</Window>
