@@ -5,6 +5,5 @@
         public int RecipeId { get; set; }
         public string Name { get; set; }
         public Vial Vial { get; set; }
-
     }
 }

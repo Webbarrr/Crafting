@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
@@ -61,7 +59,6 @@ namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
             {
                 // for design time
             }
-            
 
             this.SetReagentsCollection();
         }
@@ -78,7 +75,6 @@ namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
             }
             catch (Exception)
             {
-
                 this.Reagents = new ObservableCollection<Reagent>(
                     this.GetFakeReagents());
             }
@@ -101,10 +97,12 @@ namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
         }
 
         #region "Commands"
+
         /// <summary>
         /// Adds a new reagent
         /// </summary>
         private ICommand _addCommand;
+
         public ICommand AddCommand
         {
             get
@@ -119,6 +117,7 @@ namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
                 return _addCommand;
             }
         }
+
         private bool CanExecuteAddCommand(string reagentName)
         {
             if (String.IsNullOrWhiteSpace(reagentName))
@@ -127,6 +126,7 @@ namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
             return this.Reagents.Where(p => p.Name.ToLower() == reagentName.ToLower())
                 .FirstOrDefault() == null;
         }
+
         private void ExecuteAddCommand(string reagentName)
         {
             if (String.IsNullOrWhiteSpace(reagentName))
@@ -179,6 +179,6 @@ namespace Crafting.WPF.Screens.RawDataScreens.ReagentScreen
             _dataWrapper.OpenRawData();
         }
 
-        #endregion
+        #endregion "Commands"
     }
 }

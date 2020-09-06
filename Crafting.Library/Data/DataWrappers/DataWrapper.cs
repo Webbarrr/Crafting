@@ -10,10 +10,11 @@ namespace Crafting.Library.Data.DataWrappers
     public class DataWrapper<T> where T : IData
     {
         private readonly string _filePath;
+
         public DataWrapper()
         {
             var split = typeof(T).FullName.Split('.');
-            var fileName = split[split.Length -1];
+            var fileName = split[split.Length - 1];
 
             _filePath = $@"{this.GetFilePath()}\{fileName}.json";
 
@@ -55,7 +56,5 @@ namespace Crafting.Library.Data.DataWrappers
             Process.Start(_filePath);
             Console.WriteLine(_filePath);
         }
-
-
     }
 }

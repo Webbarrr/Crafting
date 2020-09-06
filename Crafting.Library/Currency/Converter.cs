@@ -34,7 +34,5 @@ namespace Crafting.Library.Currency
                 Copper = remainingCopper
             };
         }
-
-
     }
 }

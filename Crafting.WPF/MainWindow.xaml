@@ -18,15 +18,14 @@
         <DockPanel>
             <StackPanel DockPanel.Dock="Top"
                         Orientation="Horizontal">
-                <Button Content="Raw Data" Command="{Binding RawDataNavigationCommand}"/>
+                <Button Content="Raw Data" Command="{Binding RawDataNavigationCommand}" />
             </StackPanel>
-            
+
             <StackPanel DockPanel.Dock="Bottom">
                 <Frame HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                        NavigationUIVisibility="Hidden"
                        Content="{Binding Path=CurrentPage}" />
             </StackPanel>
         </DockPanel>
-        
     </Grid>
 </Window>
