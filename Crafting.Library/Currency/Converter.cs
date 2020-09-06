@@ -5,7 +5,7 @@ namespace Crafting.Library.Currency
     public class Converter
     {
         private const int _silverAsCopper = 100;
-        private const int _goldAsCopper = 1000;
+        private const int _goldAsCopper = 10000;
 
         public int ToCopper(Wallet wallet)
         {
@@ -34,5 +34,7 @@ namespace Crafting.Library.Currency
                 Copper = remainingCopper
             };
         }
+
+
     }
 }
